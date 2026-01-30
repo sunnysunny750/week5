@@ -20,6 +20,10 @@ async function sendData() {
       body: JSON.stringify(db),
     });
     let data = await res.text();
+    if(res.ok){
+        localStorage.setItem("email",y);
+        localStorage.setItem("password",z);
+    }
     console.log("\n\t  api response : " + data);
   } catch (e) {
     console.log(" error : " + e);
